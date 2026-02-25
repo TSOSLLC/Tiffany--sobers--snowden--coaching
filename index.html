@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiffany Sobers Snowden | Executive Coach & Strategist</title>
+    <meta name="description" content="Executive coaching at the intersection of strategy, technology, and leadership.">
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+      :root {
+        --navy: #1B2A4A;
+        --navy-dark: #111D33;
+        --navy-mid: #243354;
+        --ivory: #F8F4ED;
+        --ivory-dark: #EDE8DF;
+        --champagne: #C9A96E;
+        --champagne-light: #E8D5AA;
+        --champagne-pale: #F5EDD8;
+        --gold: #B8972A;
+        --gold-dark: #9A7D20;
+        --white: #FFFFFF;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--ivory);
+        color: var(--navy);
+        min-height: 100vh;
+      }
+
+      .header-gold-bar {
+        height: 4px;
+        background: linear-gradient(90deg, var(--gold-dark), var(--champagne-light), var(--gold-dark));
+      }
+
+      header {
+        background-color: var(--navy-dark);
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 60px 40px;
+      }
+
+      .photo-frame {
+        flex-shrink: 0;
+        width: 220px;
+        height: 280px;
+        border: 2px solid var(--champagne);
+        position: relative;
+        background-color: var(--navy-mid); /* Placeholder color until image loads */
+      }
+
+      .photo-frame::before {
+        content: '';
+        position: absolute;
+        top: -10px; left: -10px; right: 10px; bottom: 10px;
+        border: 1px solid var(--gold);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .photo-frame img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+        position: relative;
+        z-index: 1;
+      }
+
+      .header-text { flex: 1; }
+
+      .brand-tag {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--champagne);
+        margin-bottom: 16px;
+      }
+
+      .header-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 56px;
+        font-weight: 300;
+        color: var(--ivory);
+        line-height: 1.1;
+        margin-bottom: 8px;
+      }
+
+      .header-name span { color: var(--champagne-light); }
+
+      .header-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--champagne-light);
+        margin-bottom: 24px;
+        letter-spacing: 1px;
+      }
+
+      .gold-divider {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--champagne), transparent);
+        margin-bottom: 24px;
+      }
+
+      .header-tagline {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 22px;
+        font-weight: 300;
+        font-style: italic;
+        color: var(--ivory-dark);
+        line-height: 1.6;
+        max-width: 480px;
+      }
+
+      .header-meta {
+        display: flex;
+        gap: 24px;
+        margin-top: 28px;
+        flex-wrap: wrap;
+      }
+
+      .meta-item {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--champagne);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+
+      .meta-dot {
+        width: 4px; height: 4px;
+        background: var(--gold);
+        border-radius: 50%;
+      }
+
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 80px 40px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 80px;
+        align-items: start;
+      }
+
+      .section { margin-bottom: 60px; }
+
+      .section-label {
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--champagne);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .section-label::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, var(--champagne-light), transparent);
+      }
+
+      .section-heading {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 36px;
+        font-weight: 300;
+        color: var(--navy);
+        line-height: 1.2;
+        margin-bottom: 24px;
+      }
+
+      .section-heading em { font-style: italic; color: var(--champagne); }
+
+      .body-text {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.9;
+        color: #3A4A60;
+        margin-bottom: 20px;
+      }
+
+      .sidebar { position: sticky; top: 40px; }
+
+      .sidebar-card {
+        background: var(--navy-dark);
+        padding: 40px 36px;
+        margin-bottom: 24px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sidebar-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--gold-dark), var(--champagne-light), var(--gold-dark));
+      }
+
+      .sidebar-card-label {
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--champagne);
+        margin-bottom: 20px;
+      }
+
+      .sidebar-card-heading {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 26px;
+        font-weight: 300;
+        color: var(--ivory);
+        line-height: 1.3;
+        margin-bottom: 20px;
+      }
+
+      .sidebar-card-text {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1.8;
+        color: var(--champagne-light);
+        margin-bottom: 28px;
+      }
+
+      .credential-card {
+        background: var(--champagne-pale);
+        border: 1px solid var(--champagne-light);
+        padding: 32px;
+      }
+
+      .credential-item {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--champagne-light);
+      }
+
+      .credential-item:last-child { border-bottom: none; }
+
+      .credential-icon {
+        width: 28px; height: 28px;
+        background: var(--navy);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .credential-icon svg { width: 14px; height: 14px; fill: var(--champagne-light); }
+
+      .credential-text { font-size: 12px; font-weight: 500; color: var(--navy); line-height: 1.5; }
+      .credential-sub { font-size: 11px; font-weight: 300; color: #6A7A90; margin-top: 2px; }
+
+      .pillars {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        margin-top: 8px;
+      }
+
+      .pillar {
+        background: var(--ivory-dark);
+        padding: 28px 24px;
+        border-left: 2px solid transparent;
+        transition: border-color 0.2s;
+      }
+
+      .pillar:hover { border-left-color: var(--champagne); }
+
+      .pillar-number {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 36px;
+        font-weight: 300;
+        color: var(--champagne-light);
+        line-height: 1;
+        margin-bottom: 12px;
+      }
+
+      .pillar-title {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--navy);
+        margin-bottom: 10px;
+      }
+
+      .pillar-text { font-size: 12px; font-weight: 300; line-height: 1.7; color: #4A5A70; }
+
+      footer {
+        background: var(--navy-dark);
+        padding: 40px;
+        text-align: center;
+      }
+
+      .footer-logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 28px;
+        font-weight: 300;
+        color: var(--ivory);
+        letter-spacing: 4px;
+        margin-bottom: 8px;
+      }
+
+      .footer-tagline {
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--champagne);
+      }
+
+      @media (max-width: 768px) {
+        .header-inner { flex-direction: column; gap: 32px; padding: 40px 24px; }
+        .two-col { grid-template-columns: 1fr; }
+        .pillars { grid-template-columns: 1fr; }
+        .header-name { font-size: 40px; }
+        .sidebar { position: static; }
+        main { padding: 48px 24px; }
+      }
+    </style>
+</head>
+<body>
+
+    <div class="header-gold-bar"></div>
+
+    <header>
+      <div class="header-inner">
+        <div class="photo-frame">
+          <img src="profile-photo.jpg" alt="Tiffany Sobers Snowden" />
+        </div>
+        <div class="header-text">
+          <div class="brand-tag">TSOS Coaching &amp; Consulting</div>
+          <h1 class="header-name">Tiffany <span>Sobers Snowden</span></h1>
+          <div class="header-title">Executive Coach &amp; Strategist</div>
+          <div class="gold-divider"></div>
+          <p class="header-tagline">Where high-level strategy meets your soul's true calling.</p>
+          <div class="header-meta">
+            <span class="meta-item"><span class="meta-dot"></span>Atlanta, GA</span>
+            <span class="meta-item"><span class="meta-dot"></span>ICF Certified</span>
+            <span class="meta-item"><span class="meta-dot"></span>25+ Years Experience</span>
+            <a href="https://www.linkedin.com/in/tiffanynsnowden" target="_blank" class="meta-item">
+              <span class="meta-dot"></span>LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="two-col">
+        <div>
+          <div class="section">
+            <div class="section-label">The Work</div>
+            <h2 class="section-heading">Built for leaders who are <em>succeeding</em> — and sensing more is possible.</h2>
+            <p class="body-text">The leaders who seek me out aren't struggling — they're succeeding at the highest levels and beginning to sense that their next chapter demands something more than strategy alone. They're ready to lead from a place of complete alignment: where the clarity of a seasoned executive meets the conviction of someone who knows exactly <em>why</em> they're in the room.</p>
+            <p class="body-text">That's where we start.</p>
+          </div>
+
+          <div class="section">
+            <div class="section-label">Background</div>
+            <h2 class="section-heading">25 years at the <em>intersection</em> of strategy, technology, and leadership.</h2>
+            <p class="body-text">Currently serving as Head of Content Product Strategy at Google, I architect the support experience across flagship platforms — Pixel, Google Play, Chrome, and Nest — influencing how billions of people engage with technology every day.</p>
+            <p class="body-text">I've sat in rooms where I've made decisions that carry global weight. So I understand the particular pressure of leading at scale — the complexity of organizational dynamics, the speed of high-stakes pivots, and the quiet cost of leaving your full self outside the boardroom. That lived experience isn't backdrop to my coaching. It <em>is</em> my coaching.</p>
+          </div>
+
+          <div class="section">
+            <div class="section-label">What You'll Experience</div>
+            <div class="pillars">
+              <div class="pillar">
+                <div class="pillar-number">01</div>
+                <div class="pillar-title">Strategic Clarity</div>
+                <p class="pillar-text">Cut through complexity to reveal your highest-leverage priorities and immediate next steps.</p>
+              </div>
+              <div class="pillar">
+                <div class="pillar-number">02</div>
+                <div class="pillar-title">Change Management</div>
+                <p class="pillar-text">Navigate major professional and personal transitions using proven, structured frameworks.</p>
+              </div>
+              <div class="pillar">
+                <div class="pillar-number">03</div>
+                <div class="pillar-title">Whole-Life Integration</div>
+                <p class="pillar-text">Move beyond the work/life binary into a sustainable rhythm that supports your full ecosystem.</p>
+              </div>
+              <div class="pillar">
+                <div class="pillar-number">04</div>
+                <div class="pillar-title">Soul-Deep Alignment</div>
+                <p class="pillar-text">Connect your professional ambition with your authentic self for decisions that are yours alone.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-card-label">Let's Connect</div>
+            <div class="sidebar-card-heading">Is this the right partnership for you?</div>
+            <p class="sidebar-card-text">Exceptional coaching is built on exceptional chemistry. I invite you to reach out directly to schedule a 30-minute discovery conversation — no pitch, just an exploration of whether this is the right fit.</p>
+            <p style="text-align:center; font-size:11px; font-weight:400; color:var(--champagne-light); letter-spacing:1px; margin-bottom:10px; text-transform:uppercase;">Email Tiffany to Connect</p>
+            <p style="text-align:center;"><a href="mailto:Tiffany@tsosllc.com" style="color:var(--champagne-light); font-size:13px; letter-spacing:1px; text-decoration:none;">Tiffany@tsosllc.com</a></p>
+          </div>
+
+          <div class="credential-card">
+            <div class="section-label" style="margin-bottom:16px;">Credentials</div>
+            <div class="credential-item">
+              <div class="credential-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+              </div>
+              <div>
+                <div class="credential-text">ICF Certified Coach</div>
+                <div class="credential-sub">International Coaching Federation</div>
+              </div>
+            </div>
+            <div class="credential-item">
+              <div class="credential-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 3L1 9L12 15L21 10.09V17H23V9L12 3ZM5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"/></svg>
+              </div>
+              <div>
+                <div class="credential-text">Hudson Institute of Coaching</div>
+                <div class="credential-sub">Graduate, Executive Coaching Program</div>
+              </div>
+            </div>
+            <div class="credential-item">
+              <div class="credential-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 6H16V4C16 2.89 15.11 2 14 2H10C8.89 2 8 2.89 8 4V6H4C2.89 6 2 6.89 2 8V19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V8C22 6.89 21.11 6 20 6ZM10 4H14V6H10V4Z"/></svg>
+              </div>
+              <div>
+                <div class="credential-text">Head of Content Product Strategy</div>
+                <div class="credential-sub">Google</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-logo">TSOS</div>
+      <div class="footer-tagline">TSOS Coaching &amp; Consulting &nbsp;&middot;&nbsp; Atlanta, GA</div>
+    </footer>
+
+</body>
+</html>
